@@ -38,5 +38,3 @@ echo $sexo;
 */
 ?>
 
-</body>
-</html>

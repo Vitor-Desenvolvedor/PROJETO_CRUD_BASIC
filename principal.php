@@ -19,4 +19,35 @@
         <input type="submit" value="Excluir">
     </form>
 
+
+
+<?php
+
+// Listar usuários cadastrados no sistema
+
+$sqllistar = "SELECT * FROM usuarios";
+$resultado = $conexao -> query($sqllistar);
+
+// Condicionamento para listar
+if($resultado->num_rows > 0){
+
+    echo "<ul>";
+    while($linha = $resultado->fetch_assoc()){
+
+        echo "<li> Código:".$linha['Código']."| Nome:".$linha['nome']."| Idade:".$linha['idade']."</li>";
+
+    }
+
+    echo "</ul>";
+
+} else {
+
+    echo "Nenhum valor encontrado!";
+
+}
+
+
+
+?>
+</body>
 </html>

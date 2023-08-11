@@ -7,26 +7,29 @@
 </head>
 <body>
     <h1>Inserir Novo usuário</h1>
-    <form action="" method="POST">
+    <form action="inserir.php" method="POST">
         <label>Nome:<input type="text" name="nome"></label><br><br>
         <label>Idade:<input type="text" name="idade"></label><br><br>
-        <input type="submit" value="inserir">
+        <input type="submit" value="Inserir">
     </form>
 
     <h1>Excluir usuário</h1>
-    <form action="" method="POST">
+    <form action="excluir.php" method="POST">
         <label>Código do Usuário:<input type="text" name="id_excluir"></label><br><br>
         <input type="submit" value="Excluir">
     </form>
 
 
-
+<div class="php">
 <?php
+
+// Incluir a pagina de conexão do banco de dados
+include 'conexao.php';
 
 // Listar usuários cadastrados no sistema
 
-$sqllistar = "SELECT * FROM usuarios";
-$resultado = $conexao -> query($sqllistar);
+$sqlListar = "SELECT * FROM usuário";
+$resultado = $conexao -> query($sqlListar);
 
 // Condicionamento para listar
 if($resultado->num_rows > 0){
@@ -34,7 +37,7 @@ if($resultado->num_rows > 0){
     echo "<ul>";
     while($linha = $resultado->fetch_assoc()){
 
-        echo "<li> Código:".$linha['Código']."| Nome:".$linha['nome']."| Idade:".$linha['idade']."</li>";
+        echo "<li> Código:".$linha['Código']."| Nome:".$linha['Nome']."| Idade:".$linha['idade']."</li>";
 
     }
 
@@ -46,8 +49,7 @@ if($resultado->num_rows > 0){
 
 }
 
-
-
 ?>
+</div>
 </body>
 </html>

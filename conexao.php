@@ -1,11 +1,14 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] === 'POST' ){
+
+
+
+//if($_SERVER['REQUEST_METHOD'] === 'POST' ){
     //criacao de variaveis para conexao com o banco de dados
 
     $host = 'localhost';
     $usuario = 'root';
     $senha = '';
-    $banco = 'teste';
+    $banco = 'db_teste2';
 
     //Criacao de conexao com o banco de dados
 
@@ -18,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' ){
         die('Erro de conexao: '.$conexao->connect_error);
     }        
    
-}
+//}
 
 /*$sql = "SELECT nome, idade, sexo  FROM cliente where codcli = 1";
 
